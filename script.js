@@ -37,41 +37,34 @@ var app = new Vue ({
             {
                 return true;
             };
-
             switch (id) {
                 case 0:
-                    this.cell_0 = this.cell_move(this.cell_0);
+                    this.cell_0 = this.cell_move(this.cell_0, 0);
                 break;  
                 case 1:
-                    this.cell_1 = this.cell_move(this.cell_1);
+                    this.cell_1 = this.cell_move(this.cell_1, 1);
                 break;
                 case 2:
-                    this.cell_2 = this.cell_move(this.cell_2);
+                    this.cell_2 = this.cell_move(this.cell_2, 2);
                 break;
                 case 3:
-                    this.cell_3 = this.cell_move(this.cell_3);
+                    this.cell_3 = this.cell_move(this.cell_3, 3);
                 break;  
                 case 4:
-                    this.cell_4 = this.cell_move(this.cell_4);
+                    this.cell_4 = this.cell_move(this.cell_4, 4);
                 break;
                 case 5:
-                    this.cell_5 = this.cell_move(this.cell_5);
+                    this.cell_5 = this.cell_move(this.cell_5, 5);
                 break;
                 case 6:
-                    this.cell_6 = this.cell_move(this.cell_6);
+                    this.cell_6 = this.cell_move(this.cell_6, 6);
                 break;
                 case 7:
-                    this.cell_7 = this.cell_move(this.cell_7);
+                    this.cell_7 = this.cell_move(this.cell_7, 7);
                 break;
                 case 8:
-                    this.cell_8 = this.cell_move(this.cell_8);
+                    this.cell_8 = this.cell_move(this.cell_8, 8);
                 break;
-            };
-
-            if(this.OorX == 'zero') {
-                this.game[id] = 0;
-            } else {
-                this.game[id] = 1;
             };
 
             if(this.is_won(0)) {
@@ -112,22 +105,24 @@ var app = new Vue ({
                 (this.game[0] === won && this.game[4] === won && this.game[8] === won) ||
                 (this.game[2] === won && this.game[4] === won && this.game[6] === won) 
             ) {
+                console.log(this.game);
                 return true;
             } else {
+                
                 return false;
             }
         },
-        cell_move: function(cell) {
-            console.log(this.cell_8);
+        cell_move: function(cell, id) {
             if(cell === null) {
-                console.log(cell);
                 this.move_count++;
-        
+                console.log(id);
                 if (this.move_count%2 == 0) {
                     this.OorX = 'cross';
+                    this.game[id] = 1;
                     this.message = 'Ход O';
                 } else { 
                     this.OorX = 'zero';
+                    this.game[id] = 0;
                     this.message = 'Ход X'}
         
                 cell = this.OorX;
