@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tic-tac-toe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+<body>
+    <div id="app">
+        <div class="message">{{message}}</div>
+        <div id="main">
+            <div id="cell_0" class="cell" v-on:click="move(0)" v-on:click="game(0)"><div :is="cell_0"></div></div>
+            <div id="cell_1" class="cell" v-on:click="move(1)" v-on:click="game(1)"><div :is="cell_1"></div></div>
+            <div id="cell_2" class="cell" v-on:click="move(2)" v-on:click="game(2)"><div :is="cell_2"></div></div>
+            <div id="cell_3" class="cell" v-on:click="move(3)" v-on:click="game(3)"><div :is="cell_3"></div></div>
+            <div id="cell_4" class="cell" v-on:click="move(4)" v-on:click="game(4)"><div :is="cell_4"></div></div>
+            <div id="cell_5" class="cell" v-on:click="move(5)" v-on:click="game(5)"><div :is="cell_5"></div></div>
+            <div id="cell_6" class="cell" v-on:click="move(6)" v-on:click="game(6)"><div :is="cell_6"></div></div>
+            <div id="cell_7" class="cell" v-on:click="move(7)" v-on:click="game(7)"><div :is="cell_7"></div></div>
+            <div id="cell_8" class="cell" v-on:click="move(8)" v-on:click="game(8)"><div :is="cell_8"></div></div>
+        </div>
+        <button class="refresh"  v-on:click="refresh"> Начать заново! </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="script.js"></script>
+</body>
+</html>

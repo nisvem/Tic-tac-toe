@@ -1,0 +1,104 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(140, 178, 196);
+}
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px;
+    height: 100px;
+    font-size: 40px;
+    color: rgb(54, 54, 54);
+}
+#main {
+    width: 320px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#cell_0, #cell_1, #cell_3, #cell_4, #cell_6, #cell_7 {
+    border-right: 3px solid rgba(0, 0, 0, 0.8);
+}
+
+#cell_0, #cell_1, #cell_2, #cell_3, #cell_4, #cell_5 {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.8);
+}
+
+
+.cell {
+    width: 100px;
+    height: 100px;
+}
+
+.cell:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.checkmark_1, .checkmark_2  {
+    width: 100px;
+    height: 100px;
+    display: block;
+    stroke-width: 7;
+    stroke: rgb(54, 54, 54);
+
+}
+
+.checkmark_2  {
+    transform: rotate(180deg)
+
+}
+.checkmark_check_1 {
+    stroke-dasharray: 57;
+    stroke-dashoffset: 57;
+    animation: stroke 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark_check_2 {
+    stroke-dasharray: 57;
+    stroke-dashoffset: 57;
+    animation: stroke 0.5s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards;
+}
+
+.checkmark_circle {
+    stroke-dasharray: 250;
+    stroke-dashoffset: 250;
+    animation: stroke 1s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.refresh { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto 20px auto;
+    width: 350px;
+    height: 100px;
+    font-size: 40px;
+    color: white;
+    border-radius: 10px;
+    background-color:rgba(0, 0, 0, 0.8);
+    border: 0px;
+}
+
+.refresh:hover {
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.refresh:focus {
+    outline: none;
+}
+
